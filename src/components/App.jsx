@@ -5,7 +5,7 @@ import Jumbotron from './Jumbotron';
 import Form from './Form';
 
 
-import './../uikit/css/uikit.css';
+import './../uikit/css/uikit.min.css';
 import './../css/App.css';
 
 class App extends Component {
