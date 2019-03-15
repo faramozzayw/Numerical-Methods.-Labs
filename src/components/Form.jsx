@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import CalcResult from './../Function/Calculations' 
+
 export default class  extends Component {
 	state = {
 		defaultfx: '2-x-lnx=0', // 2 - x - Math.log10(x) = 0
@@ -9,31 +11,18 @@ export default class  extends Component {
 		b: ''
 	}
 
-	handleFunc = e => {
+	handleInputChange = event => {
+		const target = event.target;
+		const value = event.target.value;
+		const name = target.name;
 		this.setState({
-			fx: e.target.value
-		});	
-	}
-
-	handleFirst = e => {
-		this.setState({
-			a: e.target.value
-		});	
-	}
-
-	handleEnd = e => {
-		this.setState({
-			b: e.target.value
-		});	
+			[name]: value
+		})
 	}
 
 	handleClick = e => {
 		e.preventDefault();
-		console.log(`
-			Function: ${this.state.fx}
-			First: ${this.state.a}
-			End: ${this.state.b}
-		`);
+		CalcResult(this.state.fx, this.state.a, this.state.b, this.state.h)
 	}
 
 	render()  {
@@ -47,15 +36,23 @@ export default class  extends Component {
 			        <div className="uk-margin">
 			            <input 	className="uk-input App-form" type="text" placeholder="Введіть рівняння" id="func"
 													value={this.state.fx}
-													onChange={this.handleFunc.bind(this)}
+													name='fx'
+													onChange={this.handleInputChange.bind(this)}
 									 />
 			            <input className="uk-input App-form" type="text" placeholder="Введіть початок проміжку" id="first"
 			            				value={this.state.a}
-													onChange={this.handleFirst.bind(this)}
+			            				name='a'
+													onChange={this.handleInputChange.bind(this)}
 			            				/>
 			            <input className="uk-input App-form" type="text" placeholder="Введіть кінець проміжку" id="end"
 			            				value={this.state.b}
-													onChange={this.handleEnd.bind(this)}
+			            				name='b'
+													onChange={this.handleInputChange.bind(this)}
+			            				/>
+			            <input className="uk-input App-form" type="text" placeholder="Введіть H" id="h"
+			            				value={this.state.h}
+			            				name='h'
+													onChange={this.handleInputChange.bind(this)}
 			            				/>
 			        		<button className="uk-button uk-button-primary"
 			        		onClick={this.handleClick.bind(this)}>Почати відокремлення кореня</button>

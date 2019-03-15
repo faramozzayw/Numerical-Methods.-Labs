@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 import Jumbotron from './Jumbotron';
 import Form from './Form';
+import Constructor from './Constructor';
 
 
 import './../uikit/css/uikit.min.css';
@@ -15,6 +16,7 @@ class App extends Component {
         <Jumbotron />
         <main className="App-body">
           <Form />
+          <Constructor />
         </main>
       </div>
     );
