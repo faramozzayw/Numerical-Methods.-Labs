@@ -1,17 +1,23 @@
 const MyFunc = (a, b, h) => {
 	let x = a;
-	const u = 2 - x - Math.log10(x);
+	let u = 2 - x - Math.log(x);
+	if (!Number.isFinite(u)) {
+		alert('Неочікуваний результат. Будь ласка, перевірте правильність даних та спробуйте знову.')
+		return;
+	}
+	// x += h;
 	while (x <= b) {
-		v = 2 - i - Math.log10(i);
+		let v = 2 - x - Math.log(x);
 		if (u * v < 0) {
-			alert('На ділянці x-h, x існує корінь');
+			alert(`На ділянці [${(x-h) < x ? `${x-h}, ${x}` : `${x}, ${x-h}`}] існує корінь`);
 			u = v;
 		} else {
 			u = v;
 		}
-		x +=h
+		x += h;
 	}
-	alert('Кінець відокремлення.')
+
+	alert('Кінець відокремлення.');
 }
 
 export default MyFunc;

@@ -15,18 +15,3 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-
-.App-form {
-  margin: .75rem !important;
-  padding: 1.75rem !important;
-  font-size: 1.175rem !important;
-}
-.App-form:not(textarea):not([multiple]):not([size]) {
-  height: 30px;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-.App-form:not(select):not(input):not(textarea) {
-  line-height: 28px;
-}
