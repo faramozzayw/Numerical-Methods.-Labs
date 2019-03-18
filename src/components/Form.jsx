@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
-import MyFunc from './../Function/MyFunc' 
+// import MyFunc from './../Function/MyFunc'
+import Parser from './../Function/Parser'; 
 
 export default class  extends Component {
 	state = {
-		fx: '2 - x - lnx = 0',
+		defaultfx: '2 - x - lnx = 0',
+		fx:'',
 		h: '',
 		a: '',
 		b: ''
@@ -15,19 +17,20 @@ export default class  extends Component {
 	handleClick = e => {
 		e.preventDefault();
 		console.clear();
-		if (this.state.a.trim() === '' || this.state.b.trim() === '' || this.state.h.trim() === '') {
-			alert('Помилка вводу: порожня строка'); 
-			return;
-		}
-		const [a, b, h] = [Number(this.state.a), Number(this.state.b), Number(this.state.h)];
+		//if (this.state.a.trim() === '' || this.state.b.trim() === '' || this.state.h.trim() === '') {
+		//	alert('Помилка вводу: порожня строка'); 
+		//	return;
+		//}
+		//const [a, b, h] = [Number(this.state.a), Number(this.state.b), Number(this.state.h)];
 
-		let result;
+		//let result;
 
-		Number.isFinite(a) && Number.isFinite(b) && Number.isFinite(h) ? 
-		result = MyFunc(a, b, h) :
-		alert('Перевірте правильність даних.');
+		// Number.isFinite(a) && Number.isFinite(b) && Number.isFinite(h) ? 
+		// result = MyFunc(a, b, h) :
+		// alert('Перевірте правильність даних.');
 
-		console.log(result);
+		//console.log(result);
+		Parser(this.state.fx);
 	}
 
 	render()  {
@@ -42,8 +45,8 @@ export default class  extends Component {
 			            <input 	className="uk-input uk-form-large" type="text" placeholder="Введіть рівняння" id="func"
 													value={this.state.fx}
 													name='fx'
-													// onChange={this.handleInputChange.bind(this)}
-													readOnly
+													onChange={this.handleInputChange.bind(this)}
+													// readOnly
 									 />
 							</div> 
 							<div className="uk-margin">
