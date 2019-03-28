@@ -30,5 +30,5 @@ uikit.js
 uikit-icons.js
 
 
-
+*.log
 Card.jsx
