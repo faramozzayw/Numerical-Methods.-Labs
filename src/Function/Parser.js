@@ -1,7 +1,6 @@
 import RegExpArray from './RegExpArray'
 
 const Parser = string => {
-	console.log(RegExpArray);
 	console.log("[string in Parser]: ", string);
 	let i = 0;
 	let result = string;
