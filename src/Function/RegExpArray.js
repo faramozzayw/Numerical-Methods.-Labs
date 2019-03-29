@@ -22,4 +22,3 @@ const RegExpArray = [
 ];
 
 export default RegExpArray;
-

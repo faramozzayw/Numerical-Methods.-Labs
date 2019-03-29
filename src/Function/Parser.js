@@ -1,4 +1,4 @@
-import RegExpArray from './RegExpArray'
+import RegExpArray from './RegExpArray';
 
 const Parser = string => {
 	console.log("[string in Parser]: ", string);

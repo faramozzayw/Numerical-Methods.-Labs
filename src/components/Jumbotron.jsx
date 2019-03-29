@@ -5,7 +5,7 @@ export default class Jumbotron extends Component {
 		return(
 			<section className="uk-section uk-section-primary">
 			  <div className="uk-container">
-			    <h1 className="">Numerical Methods. Labs №5</h1>
+			    <h1 className="">Numerical Methods</h1>
 			  </div>
 			</section>
 		);
