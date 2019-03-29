@@ -7,8 +7,7 @@ const Parser = string => {
 	while (i < RegExpArray.length) {
 		let regExp = new RegExp(RegExpArray[i][0]);
 		let string = RegExpArray[i][1];
-
-		result = result.replace(regExp, string);
+		result = regExp.test(result) ? result.replace(regExp, string) : result;
 		i++;
 	}
 	console.log("[result in Parser]: ", result);

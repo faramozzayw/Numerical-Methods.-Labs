@@ -1,29 +1,25 @@
-//const ctg = x =>  1 / Math.tan(x);
-//const arcctg = x =>  Math.PI / 2 - Math.atan(x);
-
-
 const RegExpArray = [
-	[/\^/gi, '**'], 
-	[/sqrt\((.*)\)/gi, 'Math.sqrt($1)'],
-	[/\|(.*)\|/gi, 'Math.abs($1)'],
-	[/(pi)/g, 'Math.PI'],
+	[/\^/gi, '**'],
+	[/(\d{1,})[x-х]/gi, '$1*x'],
+	[/sqrt\(2\)/g, 'Math.SQRT2'],
+	[/sqrt\((.*?)\)/g, 'Math.sqrt($1)'],
 
-	[/log\((.*)\)/gi, 'Math.log($1)'],
+	[/\|(.*?)\|/g, 'Math.abs($1)'],
+	[/(pi|PI)/g, 'Math.PI'],
 
+	[/log\((.*?)\)/gi, 'Math.log($1)'],
+	[/ln\((.*?)\)/g, 'Math.log($1)'],
 
-	// имеються проблемы
-	[/arccos\((.*)\)/gi, 'Math.acos($1)'],
-	[/arcsin\((.*)\)/gi, 'Math.asin($1)'],
-	[/arctg\((.*)\)/gi, 'Math.atan($1)'],
-	[/arcctg\((.*)\)/gi, 'arcctg($1)'],
+	[/\barccos\((.*?)\)/g, 'Math.acos($1)'],
+	[/\barcsin\((.*?)\)/g, 'Math.asin($1)'],
+	[/\barctg\((.*?)\)/g, 'Math.atan($1)'],
+	[/\barcctg\((.*?)\)/g, 'arcctgx($1)'],
 
-	// имеються проблемы
-	[/cos\((.*)\)/gi, 'Math.cos($1)'],
-	[/sin\((.*)\)/gi, 'Math.sin($1)'],
-	[/tg\((.*)\)/gi, 'Math.tan($1)'],
-	[/ctg\((.*)\)/gi, 'ctg($1)'],
-
-
+	[/\bcos\((.*?)\)/g, 'Math.cos($1)'],
+	[/\bsin\((.*?)\)/g, 'Math.sin($1)'],
+	[/\bctg\((.*?)\)/g, 'ctgx($1)'],
+	[/\btg\((.*?)\)/g, 'Math.tan($1)'],
 ];
 
 export default RegExpArray;
+
