@@ -18,18 +18,4 @@
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-
-# uikit: non min files
-uikit.css
-uikit-rtl.css
-uikit.js
-uikit-icons.js
-
-
 *.log
-trash.js
-Card.jsx
