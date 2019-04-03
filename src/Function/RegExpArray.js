@@ -13,11 +13,11 @@ const RegExpArray = [
 	[/\barccos\((.*?)\)/g, 'Math.acos($1)'],
 	[/\barcsin\((.*?)\)/g, 'Math.asin($1)'],
 	[/\barctg\((.*?)\)/g, 'Math.atan($1)'],
-	[/\barcctg\((.*?)\)/g, 'Number.prototype.actg($1)'],
+	[/\barcctg\((.*?)\)/g, 'actg($1)'],
 
 	[/\bcos\((.*?)\)/g, 'Math.cos($1)'],
 	[/\bsin\((.*?)\)/g, 'Math.sin($1)'],
-	[/\bctg\((.*?)\)/g, 'Number.prototype.ctg($1)'],
+	[/\bctg\((.*?)\)/g, 'ctg($1)'],
 	[/\btg\((.*?)\)/g, 'Math.tan($1)'],
 ];
 

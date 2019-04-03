@@ -1,9 +1,7 @@
 import Parser from './Parser';
 
-Number.prototype.ctg = (x) => 1 / Math.tan(x);
-
-Number.prototype.actg = (x) => Math.PI / 2 - Math.atan(x);
-
+const ctg = (x) => 1 / Math.tan(x);
+const actg = (x) => Math.PI / 2 - Math.atan(x);
 
 const Calc = (fx, a, b, h) => {
 	let x = a;
