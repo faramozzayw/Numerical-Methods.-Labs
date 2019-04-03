@@ -25,6 +25,8 @@ export default class  extends Component {
 		Number.isFinite(a) && Number.isFinite(b) && Number.isFinite(h) ? 
 			result = MyFunc(fx, a, b, h) :
 			alert('Перевірте правильність даних.');
+
+		console.log(result);
 	}
 
 	render()  {

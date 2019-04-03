@@ -1,10 +1,16 @@
 import Parser from './Parser';
 
+Number.prototype.ctg = (x) => 1 / Math.tan(x);
+
+Number.prototype.actg = (x) => Math.PI / 2 - Math.atan(x);
+
+
 const Calc = (fx, a, b, h) => {
 	let x = a;
+	console.log("x", x);
 
 	let functionString = Parser(fx);
-	console.log("functionString", functionString);
+	console.log("[functionString]: ", functionString);
 
 	let u = eval(functionString);
 	if (!Number.isFinite(u)) {
@@ -12,13 +18,12 @@ const Calc = (fx, a, b, h) => {
 		return;
 	}
 
-	let result;
-	
+	let result = [];
 	do {
 		let v = eval(functionString);
 		if (u * v < 0) {
 			alert(`На ділянці [${(x-h) < x ? `${x-h}, ${x}` : `${x}, ${x-h}`}] існує корінь`);
-			result = `[${(x-h) < x ? `${x-h}, ${x}` : `${x}, ${x-h}`}]`;
+			result.push(`[${(x-h) < x ? `${x-h}, ${x}` : `${x}, ${x-h}`}]`);
 			u = v;
 		} else {
 			u = v;
