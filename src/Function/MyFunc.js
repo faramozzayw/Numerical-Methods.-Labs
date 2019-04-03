@@ -1,11 +1,19 @@
 import Parser from './Parser';
 
-const ctg = (x) => 1 / Math.tan(x);
-const actg = (x) => Math.PI / 2 - Math.atan(x);
+const ctg = x => 1 / Math.tan(x);
+
+const actg = x => Math.PI / 2 - Math.atan(x);
+
+const relength = x => {
+	let localX = x.toString();
+	let result = Number.parseFloat(localX.length > 5 ? localX.slice(0, 5) : localX);
+	console.log(result);
+	return result
+}
 
 const Calc = (fx, a, b, h) => {
+	console.clear();
 	let x = a;
-	console.log("x", x);
 
 	let functionString = Parser(fx);
 	console.log("[functionString]: ", functionString);
@@ -19,6 +27,7 @@ const Calc = (fx, a, b, h) => {
 	let result = [];
 	do {
 		let v = eval(functionString);
+
 		if (u * v < 0) {
 			alert(`На ділянці [${(x-h) < x ? `${x-h}, ${x}` : `${x}, ${x-h}`}] існує корінь`);
 			result.push(`[${(x-h) < x ? `${x-h}, ${x}` : `${x}, ${x-h}`}]`);
@@ -26,7 +35,8 @@ const Calc = (fx, a, b, h) => {
 		} else {
 			u = v;
 		}
-		x += h;
+
+		x = relength(x) + h;
 	} while (x <= b);
 
 	alert('Кінець відокремлення.');
