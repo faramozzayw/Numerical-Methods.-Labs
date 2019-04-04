@@ -22,7 +22,7 @@ export default class  extends Component {
 		const [fx, a, b, h] = [String(this.state.fx), Number(this.state.a), Number(this.state.b), Number(this.state.h)];
 		let result;
 
-		Number.isFinite(a) && Number.isFinite(b) && Number.isFinite(h) ? 
+		Number.isFinite(a) && Number.isFinite(b) && Number.isFinite(h) && h > 0  ? 
 			result = MyFunc(fx, a, b, h) :
 			alert('Перевірте правильність даних.');
 
@@ -34,7 +34,7 @@ export default class  extends Component {
 			<div className="uk-container">
 				<form>
 			    <fieldset className="uk-fieldset">
-			        <legend className="uk-legend">Введення данних</legend>
+			        <legend className="uk-legend">Введення даних</legend>
 			        <div className="uk-margin">
 			            <input 	className="uk-input uk-form-large" type="text" placeholder="Введіть рівняння" id="func"
 													value={this.state.fx}
@@ -57,7 +57,7 @@ export default class  extends Component {
 			            				/>
 
 			        <div className="uk-margin">
-			            <input className="uk-input uk-form-large" type="text" placeholder="Введіть H" id="h"
+			            <input className="uk-input uk-form-large" type="text" placeholder="Введіть точність" id="h"
 			            				value={this.state.h}
 			            				name='h'
 													onChange={this.handleInputChange.bind(this)}
